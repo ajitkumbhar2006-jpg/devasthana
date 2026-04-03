@@ -1,0 +1,29 @@
+[
+  {
+    "slug": "rama-navami-mahotsav",
+    "title": "Rama Navami Mahotsav",
+    "date": "April 17, 2026",
+    "description": "A full-day celebration with special alankara, bhajans, pravachan, and prasadam distribution.",
+    "content": "The Rama Navami Mahotsav brings devotees together for sacred chanting, temple processions, scripture recitation, and community prasadam. Families and volunteers participate in seva throughout the day, creating a festive and devotional atmosphere.",
+    "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=1200&q=80",
+    "type": "upcoming"
+  },
+  {
+    "slug": "janmashtami-brahmotsav",
+    "title": "Janmashtami Brahmotsav",
+    "date": "August 25, 2026",
+    "description": "Celebrate the divine appearance of Lord Krishna with midnight aarti and cultural offerings.",
+    "content": "Janmashtami at the temple features abhishekam, devotional music, children's cultural performances, Gita recitation, and midnight darshan. The temple is decorated with flowers, lamps, and devotional art to honor Lord Krishna.",
+    "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80",
+    "type": "upcoming"
+  },
+  {
+    "slug": "gita-jayanti-satsang",
+    "title": "Gita Jayanti Satsang",
+    "date": "December 15, 2025",
+    "description": "A reflective satsang dedicated to the timeless teachings of the Bhagavad Gita.",
+    "content": "This satsang included chapter recitation, spiritual talks, and youth-led reflections on dharma, action, and devotion. Devotees gathered for a shared learning experience followed by community prasadam.",
+    "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80",
+    "type": "past"
+  }
+]

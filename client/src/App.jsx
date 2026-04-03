@@ -1,0 +1,39 @@
+import { Route, Routes } from "react-router-dom";
+import Layout from "./components/layout/Layout";
+import AboutPage from "./pages/AboutPage";
+import ActivitiesPage from "./pages/ActivitiesPage";
+import ActivityDetailPage from "./pages/activities/ActivityDetailPage";
+import BlogDetailPage from "./pages/BlogDetailPage";
+import BlogPage from "./pages/BlogPage";
+import ContactPage from "./pages/ContactPage";
+import DonationsPage from "./pages/DonationsPage";
+import EventDetailPage from "./pages/EventDetailPage";
+import EventsPage from "./pages/EventsPage";
+import GalleryPage from "./pages/GalleryPage";
+import HomePage from "./pages/HomePage";
+import NotFoundPage from "./pages/NotFoundPage";
+import TemplePage from "./pages/TemplePage";
+
+function App() {
+  return (
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="temple" element={<TemplePage />} />
+        <Route path="activities" element={<ActivitiesPage />} />
+        <Route path="activities/:slug" element={<ActivityDetailPage />} />
+        <Route path="events" element={<EventsPage />} />
+        <Route path="events/:slug" element={<EventDetailPage />} />
+        <Route path="gallery" element={<GalleryPage />} />
+        <Route path="donations" element={<DonationsPage />} />
+        <Route path="blog" element={<BlogPage />} />
+        <Route path="blog/:slug" element={<BlogDetailPage />} />
+        <Route path="contact" element={<ContactPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
+  );
+}
+
+export default App;
