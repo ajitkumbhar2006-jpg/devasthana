@@ -3,11 +3,12 @@ import LoadingSpinner from "../components/common/LoadingSpinner";
 import PageHero from "../components/common/PageHero";
 import Seo from "../components/common/Seo";
 import blogsSeed from "../data/blogs.json";
+import { filterContentBySection } from "../lib/content";
 import { useFetch } from "../hooks/useFetch";
 import { fetchApi } from "../lib/api";
 
 function BlogPage() {
-  const { data: blogs, loading } = useFetch(() => fetchApi("/blogs"), blogsSeed);
+  const { data: blogs, loading } = useFetch(() => fetchApi("/content/blogs"), blogsSeed);
 
   return (
     <>
@@ -25,7 +26,7 @@ function BlogPage() {
           <LoadingSpinner />
         ) : (
           <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-            {blogs.map((blog) => (
+            {filterContentBySection(blogs, "blogs").map((blog) => (
               <BlogCard key={blog.slug} blog={blog} />
             ))}
           </div>

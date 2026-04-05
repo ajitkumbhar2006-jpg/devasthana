@@ -2,16 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: dark;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply font-body bg-ivory text-ink antialiased;
+  @apply font-body bg-lotus-pattern text-ink antialiased;
+  background-attachment: fixed;
 }
 
 ::selection {
-  background: rgba(255, 153, 51, 0.25);
+  background: rgba(244, 163, 56, 0.35);
+  color: #fff8ea;
 }
 
 .section-shell {
@@ -19,9 +25,317 @@ body {
 }
 
 .card-surface {
-  @apply rounded-[2rem] border border-white/60 bg-white/90 shadow-aura backdrop-blur-sm;
+  @apply rounded-[2rem] border border-white/10 bg-white/5 shadow-aura backdrop-blur-xl;
 }
 
 .gold-divider {
   @apply h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent;
+}
+
+.section-wash {
+  @apply border-y border-white/5 bg-white/5;
+}
+
+.glass-header {
+  @apply border-b border-white/10 bg-[#020712]/55 backdrop-blur-2xl;
+}
+
+.input-surface {
+  @apply w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-ink outline-none transition placeholder:text-white/40 focus:border-saffron focus:bg-white/10;
+}
+
+.soft-copy {
+  @apply text-white/70;
+}
+
+.glass-pill {
+  @apply rounded-full border border-white/10 bg-white/5 text-ink backdrop-blur-xl;
+}
+
+.site-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 120px 120px;
+}
+
+.intro-overlay {
+  background:
+    radial-gradient(circle at 50% 24%, rgba(245, 208, 111, 0.16), transparent 14%),
+    radial-gradient(circle at 20% 20%, rgba(83, 126, 255, 0.14), transparent 22%),
+    radial-gradient(circle at 80% 12%, rgba(244, 163, 56, 0.12), transparent 20%),
+    linear-gradient(180deg, #01030a 0%, #030814 34%, #051326 68%, #0b2140 100%);
+}
+
+.intro-vortex {
+  position: absolute;
+  inset: 2% 10% auto;
+  height: 58vh;
+  border-radius: 9999px;
+  filter: blur(2px);
+  background:
+    radial-gradient(circle at center, rgba(255, 249, 216, 0.95) 0%, rgba(245, 208, 111, 0.55) 7%, rgba(78, 131, 255, 0.4) 20%, rgba(11, 30, 64, 0.05) 46%, transparent 62%),
+    conic-gradient(from 40deg, rgba(88, 132, 255, 0.05), rgba(255, 214, 125, 0.48), rgba(81, 122, 255, 0.18), rgba(255, 203, 107, 0.32), rgba(88, 132, 255, 0.05));
+  animation: galaxySpin 18s linear infinite;
+}
+
+.intro-vortex::after {
+  content: "";
+  position: absolute;
+  inset: 16%;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(255,255,255,0.82), rgba(245,208,111,0.45) 26%, rgba(255,255,255,0) 55%);
+  filter: blur(8px);
+}
+
+.intro-ocean {
+  position: absolute;
+  inset: auto -10% -12% -10%;
+  height: 44vh;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 220, 136, 0.22), transparent 26%),
+    linear-gradient(180deg, rgba(9, 37, 77, 0.08), rgba(7, 32, 63, 0.72) 28%, rgba(2, 11, 26, 0.95));
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 20px 80px rgba(255, 255, 255, 0.04);
+  transform-origin: center top;
+  animation: oceanWave 9s ease-in-out infinite;
+}
+
+.intro-ocean::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.45;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.18) 0, transparent 18%),
+    radial-gradient(circle at 80% 30%, rgba(255,255,255,0.12) 0, transparent 16%),
+    repeating-linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.08) 1px, transparent 1px, transparent 16px);
+}
+
+.intro-particle {
+  position: absolute;
+  width: calc(2px + var(--size, 0) * 1px);
+  height: calc(2px + var(--size, 0) * 1px);
+  left: calc(var(--x, 50) * 1%);
+  top: calc(var(--y, 50) * 1%);
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(255,255,255,0.95), rgba(255,255,255,0.2) 60%, transparent 75%);
+  box-shadow: 0 0 18px rgba(255,255,255,0.28);
+  animation: particleFloat calc(8s + var(--speed, 0) * 1s) linear infinite;
+  animation-delay: calc(var(--delay, 0) * -1s);
+}
+
+.intro-ray {
+  position: absolute;
+  width: 34vw;
+  height: 2px;
+  left: calc(var(--x, 0) * 1%);
+  top: calc(var(--y, 0) * 1%);
+  transform: rotate(calc(var(--rotate, 0) * 1deg));
+  background: linear-gradient(90deg, transparent, rgba(255, 227, 164, 0.4), transparent);
+  filter: blur(1px);
+  animation: rayPulse 6s ease-in-out infinite;
+}
+
+.vishnu-scene {
+  position: absolute;
+  left: 50%;
+  bottom: 10vh;
+  width: min(70vw, 760px);
+  height: min(46vh, 420px);
+  transform: translateX(-50%);
+}
+
+.vishnu-halo {
+  position: absolute;
+  left: 50%;
+  top: 26%;
+  width: 36%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(255, 239, 188, 0.72), rgba(255, 212, 105, 0.18) 42%, transparent 72%);
+  filter: blur(6px);
+  animation: pulseHalo 5s ease-in-out infinite;
+}
+
+.vishnu-body {
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  width: 52%;
+  height: 22%;
+  transform: translateX(-22%) rotate(-8deg);
+  border-radius: 9999px;
+  background: linear-gradient(90deg, rgba(81, 147, 255, 0.86), rgba(45, 107, 214, 0.94));
+  box-shadow: 0 0 40px rgba(58, 123, 238, 0.28);
+  animation: bodyDrift 7s ease-in-out infinite;
+}
+
+.vishnu-head {
+  position: absolute;
+  left: 59%;
+  bottom: 37%;
+  width: 10%;
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 35% 35%, rgba(255, 225, 164, 0.95), rgba(90, 155, 255, 0.86) 60%, rgba(34, 84, 184, 0.92));
+  box-shadow: 0 0 34px rgba(112, 170, 255, 0.28);
+}
+
+.vishnu-crown {
+  position: absolute;
+  left: 59.8%;
+  bottom: 44%;
+  width: 7%;
+  height: 7%;
+  transform: translateX(-50%);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  background: linear-gradient(180deg, rgba(255, 238, 174, 0.95), rgba(245, 175, 56, 0.92));
+  filter: drop-shadow(0 0 12px rgba(245, 208, 111, 0.42));
+}
+
+.vishnu-arm,
+.vishnu-symbol {
+  position: absolute;
+  border-radius: 9999px;
+}
+
+.vishnu-arm {
+  width: 18%;
+  height: 4.5%;
+  background: linear-gradient(90deg, rgba(78, 143, 248, 0.86), rgba(54, 105, 209, 0.94));
+  box-shadow: 0 0 20px rgba(71, 126, 234, 0.2);
+}
+
+.vishnu-arm.left-top {
+  left: 34%;
+  bottom: 38%;
+  transform: rotate(-18deg);
+}
+
+.vishnu-arm.left-bottom {
+  left: 36%;
+  bottom: 29%;
+  transform: rotate(10deg);
+}
+
+.vishnu-arm.right-top {
+  left: 56%;
+  bottom: 33%;
+  transform: rotate(18deg);
+}
+
+.vishnu-arm.right-bottom {
+  left: 56%;
+  bottom: 24%;
+  transform: rotate(-6deg);
+}
+
+.vishnu-symbol {
+  width: 4.8%;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(255, 245, 214, 0.96), rgba(245, 208, 111, 0.55) 55%, transparent 72%);
+  filter: blur(0.2px);
+}
+
+.vishnu-symbol.conch {
+  left: 31%;
+  bottom: 41%;
+}
+
+.vishnu-symbol.chakra {
+  left: 73%;
+  bottom: 37%;
+}
+
+.vishnu-symbol.mace {
+  left: 72%;
+  bottom: 22%;
+}
+
+.vishnu-symbol.lotus {
+  left: 32%;
+  bottom: 24%;
+}
+
+.sheshnag-base {
+  position: absolute;
+  left: 50%;
+  bottom: 14%;
+  width: 58%;
+  height: 18%;
+  transform: translateX(-42%);
+  border-radius: 9999px;
+  background: linear-gradient(90deg, rgba(193, 164, 255, 0.1), rgba(127, 168, 255, 0.18), rgba(245, 208, 111, 0.14));
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 0 40px rgba(135, 164, 255, 0.12);
+}
+
+.sheshnag-hood {
+  position: absolute;
+  left: 50%;
+  bottom: 38%;
+  width: 9%;
+  aspect-ratio: 0.85;
+  border-radius: 50% 50% 42% 42%;
+  background: radial-gradient(circle at 50% 28%, rgba(255, 236, 186, 0.65), rgba(79, 117, 230, 0.68) 60%, rgba(18, 35, 82, 0.9));
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 0 26px rgba(140, 170, 255, 0.18);
+  transform: translateX(-50%);
+}
+
+.intro-title {
+  letter-spacing: 0.38em;
+  text-shadow: 0 0 18px rgba(245, 208, 111, 0.28);
+}
+
+@keyframes galaxySpin {
+  from { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.06); }
+  to { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes particleFloat {
+  0% { transform: translate3d(0, 0, 0) scale(0.85); opacity: 0; }
+  15% { opacity: 0.9; }
+  50% { transform: translate3d(calc(var(--driftX, 0) * 1px), calc(var(--driftY, 0) * 1px), 0) scale(1.1); }
+  100% { transform: translate3d(calc(var(--driftX, 0) * 1.4px), calc(var(--driftY, 0) * 1.4px - 60px), 0) scale(0.7); opacity: 0; }
+}
+
+@keyframes rayPulse {
+  0%, 100% { opacity: 0.08; }
+  50% { opacity: 0.42; }
+}
+
+@keyframes pulseHalo {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes oceanWave {
+  0%, 100% { transform: translateY(0) scaleY(1); }
+  50% { transform: translateY(4px) scaleY(1.03); }
+}
+
+@keyframes bodyDrift {
+  0%, 100% { transform: translateX(-22%) rotate(-8deg) translateY(0); }
+  50% { transform: translateX(-22%) rotate(-8deg) translateY(-5px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-vortex,
+  .intro-particle,
+  .intro-ray,
+  .intro-ocean,
+  .vishnu-halo,
+  .vishnu-body {
+    animation: none !important;
+  }
 }

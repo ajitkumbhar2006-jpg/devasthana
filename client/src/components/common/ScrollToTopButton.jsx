@@ -17,7 +17,7 @@ function ScrollToTopButton() {
     <button
       type="button"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-6 right-6 z-50 rounded-full bg-saffron px-4 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-ink"
+      className="glass-pill fixed bottom-6 right-6 z-50 px-4 py-3 text-sm font-semibold transition hover:border-gold hover:text-gold"
       aria-label="Scroll to top"
     >
       Top

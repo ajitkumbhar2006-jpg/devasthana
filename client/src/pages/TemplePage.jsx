@@ -30,11 +30,11 @@ function TemplePage() {
       <section className="section-shell py-20">
         <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="card-surface p-8 sm:p-10">
-            <p className="text-sm uppercase tracking-[0.3em] text-saffron">Shree Krishna Deity</p>
+            <p className="text-sm uppercase tracking-[0.3em] text-gold">Shree Krishna Deity</p>
             <h2 className="mt-4 font-heading text-4xl text-ink">
               The temple sanctum radiates grace, beauty, and loving presence.
             </h2>
-            <p className="mt-6 leading-8 text-stone-700">
+            <p className="soft-copy mt-6 leading-8">
               The presiding deity of Shree Krishna Devasthana is worshipped with
               elaborate alankara, bhog offerings, incense, and lamp ceremonies.
               The darshan experience is designed to be uplifting, peaceful, and
@@ -52,8 +52,11 @@ function TemplePage() {
               <h3 className="font-heading text-2xl text-ink">Darshan Timings</h3>
               <div className="mt-6 space-y-4">
                 {timingData.map((item) => (
-                  <div key={item.label} className="flex justify-between rounded-2xl bg-ivory px-4 py-3">
-                    <span>{item.label}</span>
+                  <div
+                    key={item.label}
+                    className="flex justify-between rounded-2xl border border-white/8 bg-white/[0.04] px-4 py-3"
+                  >
+                    <span className="text-white/90">{item.label}</span>
                     <span className="font-semibold text-saffron">{item.time}</span>
                   </div>
                 ))}
@@ -64,17 +67,17 @@ function TemplePage() {
               <div className="mt-6 space-y-5">
                 {aartiSchedule.map((item) => (
                   <div key={item.period}>
-                    <p className="font-semibold text-saffron">{item.period}</p>
-                    <p className="mt-1 text-stone-700">{item.detail}</p>
+                    <p className="font-semibold text-gold">{item.period}</p>
+                    <p className="soft-copy mt-1">{item.detail}</p>
                   </div>
                 ))}
               </div>
             </div>
             <div className="card-surface p-8">
               <h3 className="font-heading text-2xl text-ink">Visitor Guidelines</h3>
-              <ul className="mt-6 space-y-4 text-stone-700">
+              <ul className="soft-copy mt-6 space-y-4">
                 {guidelines.map((item) => (
-                  <li key={item} className="rounded-2xl bg-ivory px-4 py-3">
+                  <li key={item} className="rounded-2xl border border-white/8 bg-white/[0.09] px-4 py-3 text-white/90">
                     {item}
                   </li>
                 ))}

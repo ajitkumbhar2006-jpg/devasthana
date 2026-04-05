@@ -1,0 +1,119 @@
+.cosmic-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 36%, rgba(96, 120, 255, 0.16), transparent 16%),
+    radial-gradient(circle at 50% 48%, rgba(255, 222, 159, 0.14), transparent 28%),
+    linear-gradient(180deg, #010207 0%, #040917 54%, #090f1d 100%);
+}
+
+.cosmic-loader__scene,
+.cosmic-loader__scene canvas,
+.cosmic-loader__flash,
+.cosmic-loader__veil,
+.cosmic-loader__vishnu-shell {
+  position: absolute;
+  inset: 0;
+}
+
+.cosmic-loader__scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 233, 180, 0.08), transparent 26%),
+    linear-gradient(180deg, rgba(3, 6, 16, 0.05), rgba(1, 1, 1, 0.45));
+  pointer-events: none;
+}
+
+.cosmic-loader__flash {
+  opacity: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.9), rgba(255, 215, 0, 0.6), transparent 70%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.cosmic-loader__flash.is-active {
+  animation: cosmicFlash 0.8s ease-in-out forwards;
+}
+
+.cosmic-loader__vishnu-shell {
+  display: grid;
+  place-items: center;
+  padding: 5vh 5vw;
+}
+
+.cosmic-loader__aura {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(74vw, 920px);
+  height: min(74vw, 920px);
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(255, 241, 196, 0.42), rgba(245, 201, 114, 0.18) 34%, rgba(21, 9, 3, 0) 68%);
+  filter: blur(28px);
+}
+
+.cosmic-loader__vishnu-image {
+  position: relative;
+  z-index: 1;
+  width: min(94vw, 1120px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.55));
+  will-change: transform, opacity;
+  animation: sacredFloat 6.5s ease-in-out infinite;
+}
+
+.cosmic-loader__veil {
+  background:
+    radial-gradient(circle at 50% 16%, rgba(255, 249, 227, 0.06), transparent 22%),
+    linear-gradient(180deg, rgba(1, 4, 11, 0.02), rgba(0, 0, 0, 0.28));
+  pointer-events: none;
+}
+
+@keyframes cosmicFlash {
+  0% {
+    opacity: 0;
+  }
+
+  24% {
+    opacity: 0.92;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes sacredFloat {
+  0%,
+  100% {
+    transform: translateY(-6px) scale(1);
+  }
+
+  50% {
+    transform: translateY(10px) scale(1.02);
+  }
+}
+
+@media (max-width: 768px) {
+  .cosmic-loader__vishnu-shell {
+    padding: 8vh 4vw;
+  }
+
+  .cosmic-loader__vishnu-image {
+    width: min(108vw, 820px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cosmic-loader__flash.is-active,
+  .cosmic-loader__vishnu-image {
+    animation: none !important;
+  }
+}

@@ -48,11 +48,11 @@ function ContactPage() {
           <div className="space-y-6">
             <div className="card-surface p-8">
               <h2 className="font-heading text-3xl text-ink">Temple Address</h2>
-              <p className="mt-4 text-stone-700">{contactInfo.address}</p>
-              <p className="mt-3 text-stone-700">{contactInfo.phone}</p>
-              <p className="mt-3 text-stone-700">{contactInfo.email}</p>
+              <p className="soft-copy mt-4">{contactInfo.address}</p>
+              <p className="soft-copy mt-3">{contactInfo.phone}</p>
+              <p className="soft-copy mt-3">{contactInfo.email}</p>
             </div>
-            <div className="overflow-hidden rounded-[2rem] shadow-aura">
+            <div className="overflow-hidden rounded-[2rem] border border-white/10 shadow-aura">
               <iframe
                 title="Temple location map"
                 src={contactInfo.mapEmbed}
@@ -67,52 +67,52 @@ function ContactPage() {
             <h2 className="font-heading text-4xl text-ink">Send a Message</h2>
             <div className="mt-8 space-y-5">
               <label className="block">
-                <span className="mb-2 block text-sm font-medium text-stone-700">Name</span>
+                <span className="mb-2 block text-sm font-medium text-white/87">Name</span>
                 <input
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-2xl border border-sandal bg-white px-4 py-3 outline-none transition focus:border-saffron"
+                  className="input-surface"
                 />
               </label>
               <label className="block">
-                <span className="mb-2 block text-sm font-medium text-stone-700">Email</span>
+                <span className="mb-2 block text-sm font-medium text-white/87">Email</span>
                 <input
                   name="email"
                   type="email"
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-2xl border border-sandal bg-white px-4 py-3 outline-none transition focus:border-saffron"
+                  className="input-surface"
                 />
               </label>
               <label className="block">
-                <span className="mb-2 block text-sm font-medium text-stone-700">Message</span>
+                <span className="mb-2 block text-sm font-medium text-white/87">Message</span>
                 <textarea
                   name="message"
                   rows="5"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-2xl border border-sandal bg-white px-4 py-3 outline-none transition focus:border-saffron"
+                  className="input-surface"
                 />
               </label>
             </div>
             <button
               type="submit"
               disabled={status === "submitting"}
-              className="mt-8 rounded-full bg-saffron px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink disabled:opacity-60"
+              className="mt-8 rounded-full bg-gradient-to-r from-saffron to-gold px-6 py-3 text-sm font-semibold text-cosmic transition hover:shadow-glow disabled:opacity-60"
             >
               {status === "submitting" ? "Sending..." : "Submit Inquiry"}
             </button>
             {status === "success" && (
-              <p className="mt-5 rounded-2xl bg-ivory px-4 py-3 text-sm text-stone-700">
+              <p className="mt-5 rounded-2xl border border-emerald-400/10 bg-emerald-400/10 px-4 py-3 text-sm text-emerald-100">
                 Your message has been sent to the temple office.
               </p>
             )}
             {status === "error" && (
-              <p className="mt-5 rounded-2xl bg-rose-50 px-4 py-3 text-sm text-rose-700">
+              <p className="mt-5 rounded-2xl border border-rose-400/10 bg-rose-400/10 px-4 py-3 text-sm text-rose-100">
                 The contact API is unavailable right now. Please try again later.
               </p>
             )}

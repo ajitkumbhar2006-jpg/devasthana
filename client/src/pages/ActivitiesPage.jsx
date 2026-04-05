@@ -1,9 +1,17 @@
+import { useMemo } from "react";
 import ActivityCard from "../components/common/ActivityCard";
+import LoadingSpinner from "../components/common/LoadingSpinner";
 import PageHero from "../components/common/PageHero";
 import Seo from "../components/common/Seo";
 import { activities } from "../data/siteContent";
+import { filterContentBySection } from "../lib/content";
+import { useFetch } from "../hooks/useFetch";
+import { fetchApi } from "../lib/api";
 
 function ActivitiesPage() {
+  const { data, loading } = useFetch(() => fetchApi("/content/activities"), activities);
+  const items = useMemo(() => filterContentBySection(data, "activities"), [data]);
+
   return (
     <>
       <Seo
@@ -16,11 +24,15 @@ function ActivitiesPage() {
         image="https://images.unsplash.com/photo-1463592177119-bab2a00f3ccb?auto=format&fit=crop&w=1600&q=80"
       />
       <section className="section-shell py-20">
-        <div className="grid gap-8 md:grid-cols-2">
-          {activities.map((activity) => (
-            <ActivityCard key={activity.slug} activity={activity} />
-          ))}
-        </div>
+        {loading ? (
+          <LoadingSpinner />
+        ) : (
+          <div className="grid gap-8 md:grid-cols-2">
+            {items.map((activity) => (
+              <ActivityCard key={activity.id || activity.slug} activity={activity} />
+            ))}
+          </div>
+        )}
       </section>
     </>
   );

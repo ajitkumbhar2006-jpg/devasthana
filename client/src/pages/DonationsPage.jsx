@@ -41,57 +41,61 @@ function DonationsPage() {
             {donationTypes.map((type) => (
               <div key={type.title} className="card-surface p-8">
                 <h2 className="font-heading text-3xl text-ink">{type.title}</h2>
-                <p className="mt-3 text-stone-700">{type.description}</p>
+                <p className="soft-copy mt-3">{type.description}</p>
               </div>
             ))}
             <div className="card-surface p-8">
-              <p className="text-sm uppercase tracking-[0.28em] text-saffron">Payment Modes</p>
+              <p className="text-sm uppercase tracking-[0.28em] text-gold">Payment Modes</p>
               <h3 className="mt-3 font-heading text-2xl text-ink">Mock Razorpay / UPI Interface</h3>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl bg-ivory p-5">
+                <div className="rounded-2xl border border-white/8 bg-white/[0.09] p-5">
                   <p className="font-semibold text-ink">Razorpay</p>
-                  <p className="mt-2 text-sm text-stone-600">Secure card, wallet, and net banking UI placeholder.</p>
+                  <p className="mt-2 text-sm text-white/87">
+                    Secure card, wallet, and net banking UI placeholder.
+                  </p>
                 </div>
-                <div className="rounded-2xl bg-ivory p-5">
+                <div className="rounded-2xl border border-white/8 bg-white/[0.09] p-5">
                   <p className="font-semibold text-ink">UPI</p>
-                  <p className="mt-2 text-sm text-stone-600">Pay via UPI ID: donate@krishnatemple</p>
+                  <p className="mt-2 text-sm text-white/87">
+                    Pay via UPI ID: donate@krishnatemple
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
           <form onSubmit={handleSubmit} className="card-surface p-8 sm:p-10">
-            <p className="text-sm uppercase tracking-[0.28em] text-saffron">Donation Form</p>
+            <p className="text-sm uppercase tracking-[0.28em] text-gold">Donation Form</p>
             <h2 className="mt-4 font-heading text-4xl text-ink">Contribute with devotion</h2>
             <div className="mt-8 space-y-5">
               <label className="block">
-                <span className="mb-2 block text-sm font-medium text-stone-700">Name</span>
+                <span className="mb-2 block text-sm font-medium text-white/87">Name</span>
                 <input
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-2xl border border-sandal bg-white px-4 py-3 outline-none transition focus:border-saffron"
+                  className="input-surface"
                 />
               </label>
               <label className="block">
-                <span className="mb-2 block text-sm font-medium text-stone-700">Amount</span>
+                <span className="mb-2 block text-sm font-medium text-white/87">Amount</span>
                 <input
                   name="amount"
                   type="number"
                   value={formData.amount}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-2xl border border-sandal bg-white px-4 py-3 outline-none transition focus:border-saffron"
+                  className="input-surface"
                 />
               </label>
               <label className="block">
-                <span className="mb-2 block text-sm font-medium text-stone-700">Purpose</span>
+                <span className="mb-2 block text-sm font-medium text-white/87">Purpose</span>
                 <select
                   name="purpose"
                   value={formData.purpose}
                   onChange={handleChange}
-                  className="w-full rounded-2xl border border-sandal bg-white px-4 py-3 outline-none transition focus:border-saffron"
+                  className="input-surface"
                 >
                   {donationTypes.map((type) => (
                     <option key={type.title} value={type.title}>
@@ -103,12 +107,12 @@ function DonationsPage() {
             </div>
             <button
               type="submit"
-              className="mt-8 rounded-full bg-saffron px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink"
+              className="mt-8 rounded-full bg-gradient-to-r from-saffron to-gold px-6 py-3 text-sm font-semibold text-cosmic transition hover:shadow-glow"
             >
               Proceed to Donate
             </button>
             {submitted && (
-              <p className="mt-5 rounded-2xl bg-ivory px-4 py-3 text-sm text-stone-700">
+              <p className="mt-5 rounded-2xl border border-emerald-400/10 bg-emerald-400/10 px-4 py-3 text-sm text-emerald-100">
                 Donation intent captured successfully. Connect Razorpay or UPI in production.
               </p>
             )}

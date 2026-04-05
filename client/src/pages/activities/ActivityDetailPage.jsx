@@ -1,12 +1,21 @@
 import { Link, useParams } from "react-router-dom";
+import LoadingSpinner from "../../components/common/LoadingSpinner";
 import PageHero from "../../components/common/PageHero";
 import Seo from "../../components/common/Seo";
 import { activities } from "../../data/siteContent";
+import { filterContentBySection } from "../../lib/content";
+import { useFetch } from "../../hooks/useFetch";
+import { fetchApi } from "../../lib/api";
 import NotFoundPage from "../NotFoundPage";
 
 function ActivityDetailPage() {
   const { slug } = useParams();
-  const activity = activities.find((item) => item.slug === slug);
+  const { data, loading } = useFetch(() => fetchApi("/content/activities"), activities);
+  const activity = filterContentBySection(data, "activities").find((item) => item.slug === slug);
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
 
   if (!activity) {
     return <NotFoundPage />;
@@ -20,11 +29,11 @@ function ActivityDetailPage() {
       />
       <PageHero title={activity.title} description={activity.excerpt} image={activity.image} />
       <section className="section-shell py-20">
-        <div className="mx-auto max-w-4xl card-surface p-8 sm:p-10">
-          <p className="text-lg leading-8 text-stone-700">{activity.details}</p>
+        <div className="card-surface mx-auto max-w-4xl p-8 sm:p-10">
+          <p className="soft-copy text-lg leading-8">{activity.details || activity.content || activity.description}</p>
           <Link
             to="/activities"
-            className="mt-8 inline-flex rounded-full bg-saffron px-5 py-3 text-sm font-semibold text-white transition hover:bg-ink"
+            className="mt-8 inline-flex rounded-full bg-gradient-to-r from-saffron to-gold px-5 py-3 text-sm font-semibold text-cosmic transition hover:shadow-glow"
           >
             Back to activities
           </Link>

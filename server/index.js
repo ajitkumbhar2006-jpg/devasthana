@@ -1,10 +1,20 @@
-import dotenv from "dotenv";
+import "dotenv/config";
 import app from "./app.js";
-
-dotenv.config();
+import { connectDatabase } from "./config/db.js";
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`Temple API listening on port ${PORT}`);
-});
+async function startServer() {
+  try {
+    await connectDatabase();
+
+    app.listen(PORT, () => {
+      console.log(`Temple API listening on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error("Failed to start server:", error.message);
+    process.exit(1);
+  }
+}
+
+startServer();
