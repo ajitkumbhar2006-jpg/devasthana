@@ -12,7 +12,7 @@ function AboutPage() {
       <PageHero
         title="About the Temple"
         description="Learn the story, spiritual mission, and devotional purpose behind Shree Krishna Devasthana."
-        image="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=80"
+        image="https://images.unsplash.com/photo-1625580916836-1badf2c15b32?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       />
       <section className="section-shell py-20">
         <div className="grid gap-8 lg:grid-cols-2">

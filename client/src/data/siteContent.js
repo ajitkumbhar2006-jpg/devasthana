@@ -27,17 +27,17 @@ export const timingData = [
 export const featuredGallery = [
   {
     image:
-      "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1641730259879-ad98e7db7bcb?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Janmashtami Celebration"
   },
   {
     image:
-      "https://images.unsplash.com/photo-1512632578888-169bbbc64f33?auto=format&fit=crop&w=1200&q=80",
+      "https://plus.unsplash.com/premium_photo-1691030925962-bb7853849f9a?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Temple Sanctum"
   },
   {
     image:
-      "https://images.unsplash.com/photo-1578923931302-a132d23879f6?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Evening Deepotsava"
   }
 ];
@@ -95,7 +95,7 @@ export const activities = [
     title: "Daily Puja",
     excerpt: "Sacred morning and evening worship offered with devotion and Vedic chants.",
     image:
-      "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1621355310264-03958a95f6d1?q=80&w=644&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     details:
       "Daily puja at Shree Krishna Devasthana begins before sunrise with mangala seva, followed by shringar, bhog, and evening aarti. Devotees are welcome to participate in sankalpa offerings and sponsor seva on auspicious days."
   },
@@ -104,7 +104,7 @@ export const activities = [
     title: "Bhajan & Kirtan",
     excerpt: "Heart-opening congregational singing that brings the community together in devotion.",
     image:
-      "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1200&q=80",
+      "https://plus.unsplash.com/premium_photo-1691030925783-9e5ea6e8c66b?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     details:
       "Weekly bhajan and kirtan gatherings fill the temple with nama sankirtana. Traditional instruments, guided chanting, and meditative rhythms create a welcoming environment for families, youth, and visitors."
   },
@@ -113,7 +113,7 @@ export const activities = [
     title: "Spiritual Classes",
     excerpt: "Scripture study, Gita reflections, and discussions on living with devotion.",
     image:
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+      "https://www.djjs.org/uploads/news/thumbs/im_6905827c41fb1.jpg",
     details:
       "Classes cover Bhagavad Gita, Srimad Bhagavatam, and practical dharmic living. Sessions are designed for all age groups and are led by learned teachers and invited spiritual speakers."
   },
@@ -122,7 +122,7 @@ export const activities = [
     title: "Annadan",
     excerpt: "Food donation seva to nourish visitors, pilgrims, and the wider community.",
     image:
-      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=80",
+      "https://iskconnewtown.com/wp-content/uploads/2025/03/Nitya-Annadan-Seva-ISKCON-Newtown-1.jpeg",
     details:
       "The annadan program offers sanctified meals during festival days, monthly seva drives, and need-based outreach. Donors can contribute to grains, cooking, serving, and festival prasadam distribution."
   }

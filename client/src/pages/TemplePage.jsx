@@ -25,7 +25,7 @@ function TemplePage() {
       <PageHero
         title="Temple & Deities"
         description="Experience the beauty of Shree Krishna darshan, temple worship, and a daily rhythm of sacred devotion."
-        image="https://images.unsplash.com/photo-1535535112387-56ffe8db21ff?auto=format&fit=crop&w=1600&q=80"
+        image="https://images.unsplash.com/photo-1647413626641-d72534c9c41a?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       />
       <section className="section-shell py-20">
         <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
@@ -41,7 +41,7 @@ function TemplePage() {
               deeply devotional for every visitor.
             </p>
             <img
-              src="https://images.unsplash.com/photo-1527236438218-d82077ae1f85?auto=format&fit=crop&w=1400&q=80"
+              src="https://images.unsplash.com/photo-1626242526850-e038642aeb1f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Temple deity"
               className="mt-8 h-80 w-full rounded-[1.6rem] object-cover"
             />
