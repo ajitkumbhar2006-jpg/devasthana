@@ -1,6 +1,39 @@
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 function HeroSection() {
+  const videoRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const toggleSound = () => {
+    const video = videoRef.current;
+
+    if (!video) return;
+
+    const nextMuted = !video.muted;
+    video.muted = nextMuted;
+    video.volume = nextMuted ? 0 : 1;
+    setIsMuted(nextMuted);
+    video.play();
+  };
+
+  const openFullscreenVideo = async () => {
+    const video = videoRef.current;
+
+    if (!video) return;
+
+    video.muted = false;
+    video.volume = 1;
+    setIsMuted(false);
+    await video.play();
+
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.webkitEnterFullscreen) {
+      video.webkitEnterFullscreen();
+    }
+  };
+
   return (
     <section className="relative isolate overflow-hidden bg-hero-glow text-white">
       {/* Main Section Background */}
@@ -44,28 +77,60 @@ function HeroSection() {
           </div>
         </div>
 
-        {/* Right Content - FULL IMAGE CARD */}
+        {/* Right Content - FULL VIDEO CARD */}
         <div className="card-surface animate-float relative h-[28rem] overflow-hidden rounded-[2.5rem] p-2">
-          {/* The Full Background Image */}
+          {/* The Full Background Video */}
           <div className="absolute inset-0 z-0">
-            <img 
-              src="https://images.unsplash.com/photo-1660280037297-a3b5e79a3d20?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-              alt="Lord Krishna"
+            <video
+              ref={videoRef}
+              src="/assets/temple.mp4"
+              aria-label="Temple darshan video"
               className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
+              autoPlay
+              muted
+              loop
+              playsInline
             />
-            {/* Dark Overlay to make text pop */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#050c18] via-[#050c18]/40 to-transparent" />
+            <div
+              className="absolute inset-0 bg-gradient-to-t from-[#050c18] via-[#050c18]/40 to-transparent"
+              aria-hidden="true"
+            />
+            <div
+              className="absolute inset-0 bg-gradient-to-r from-[#050c18]/20 via-transparent to-transparent"
+              aria-hidden="true"
+            />
           </div>
 
           {/* Card Content Overlay */}
           <div className="relative z-10 flex h-full flex-col justify-between rounded-[2.2rem] border border-white/10 p-8">
-            <div>
-              <p className="text-xs uppercase tracking-[0.4em] text-gold/90 font-medium">
-                Website Intro
-              </p>
-              <h3 className="mt-4 font-heading text-4xl text-white drop-shadow-lg">
-                Hare Krishna 
-              </h3>
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-xs uppercase tracking-[0.4em] text-gold/90 font-medium">
+                  Website Intro
+                </p>
+                <h3 className="mt-4 font-heading text-4xl text-white drop-shadow-lg">
+                  Hare Krishna 
+                </h3>
+              </div>
+
+              <div className="flex shrink-0 gap-2">
+                <button
+                  type="button"
+                  onClick={toggleSound}
+                  className="rounded-full border border-white/20 bg-black/30 px-3 py-2 text-xs font-semibold text-white backdrop-blur transition hover:border-gold hover:bg-black/45"
+                  aria-label={isMuted ? "Turn video sound on" : "Turn video sound off"}
+                >
+                  {isMuted ? "Sound On" : "Mute"}
+                </button>
+                <button
+                  type="button"
+                  onClick={openFullscreenVideo}
+                  className="rounded-full border border-white/20 bg-black/30 px-3 py-2 text-xs font-semibold text-white backdrop-blur transition hover:border-gold hover:bg-black/45"
+                  aria-label="Watch video in full screen"
+                >
+                  Full Screen
+                </button>
+              </div>
             </div>
 
             <div className="flex items-center gap-3">
