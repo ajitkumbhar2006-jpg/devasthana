@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PageHero from "../components/common/PageHero";
 import Seo from "../components/common/Seo";
-import { donationTypes } from "../data/siteContent";
+import { donationPayment, donationTypes } from "../data/siteContent";
 
 const initialForm = {
   name: "",
@@ -46,18 +46,20 @@ function DonationsPage() {
             ))}
             <div className="card-surface p-8">
               <p className="text-sm uppercase tracking-[0.28em] text-gold">Payment Modes</p>
-              <h3 className="mt-3 font-heading text-2xl text-ink">Mock Razorpay / UPI Interface</h3>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-white/8 bg-white/[0.09] p-5">
-                  <p className="font-semibold text-ink">Razorpay</p>
-                  <p className="mt-2 text-sm text-white/87">
-                    Secure card, wallet, and net banking UI placeholder.
-                  </p>
-                </div>
+              <h3 className="mt-3 font-heading text-2xl text-ink">Scan UPI QR to Donate</h3>
+              <div className="mt-6 grid gap-5 sm:grid-cols-[auto_1fr] sm:items-center">
+                <img
+                  src={donationPayment.qrImage}
+                  alt={`UPI QR for ${donationPayment.name}`}
+                  className="mx-auto h-56 w-56 rounded-2xl border border-white/10 bg-white p-3"
+                  loading="lazy"
+                />
                 <div className="rounded-2xl border border-white/8 bg-white/[0.09] p-5">
                   <p className="font-semibold text-ink">UPI</p>
-                  <p className="mt-2 text-sm text-white/87">
-                    Pay via UPI ID: donate@krishnatemple
+                  <p className="mt-2 text-sm text-white/87">Name: {donationPayment.name}</p>
+                  <p className="mt-2 text-sm text-white/87">Mobile: {donationPayment.phone}</p>
+                  <p className="mt-2 break-all text-sm text-white/87">
+                    UPI ID: {donationPayment.upiId}
                   </p>
                 </div>
               </div>

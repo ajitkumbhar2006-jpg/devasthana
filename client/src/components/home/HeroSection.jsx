@@ -58,15 +58,15 @@ function HeroSection() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/72">
             The site now opens with a cinematic celestial intro, then settles into a
-            dark glass-driven experience for darshan, seva, events, and spiritual
+            dark glass-driven experience for darshan, seva, donations, and spiritual
             storytelling.
           </p>  
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              to="/events"
+              to="/activities"
               className="rounded-full bg-gradient-to-r from-saffron to-gold px-6 py-3 text-sm font-semibold text-cosmic transition hover:shadow-glow"
             >
-              Explore Events
+              Explore Activities
             </Link>
             <Link
               to="/donations"

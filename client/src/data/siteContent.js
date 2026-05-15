@@ -3,10 +3,8 @@ export const navLinks = [
   { label: "About", path: "/about" },
   { label: "Temple", path: "/temple" },
   { label: "Activities", path: "/activities" },
-  { label: "Events", path: "/events" },
   { label: "Gallery", path: "/gallery" },
   { label: "Donations", path: "/donations" },
-  { label: "Blog", path: "/blog" },
   { label: "Contact", path: "/contact" }
 ];
 
@@ -144,9 +142,25 @@ export const donationTypes = [
 ];
 
 export const contactInfo = {
-  address: "Shree Krishna Devasthana, Temple Road, Solapur, Maharashtra 413001",
-  phone: "+91 98765 43210",
-  email: "info@shreekrishnadevasthana.org",
+  address:
+    "D-Group, Sagar Chowk, Hydrabad Road, New Rangraj Nagar, Near new Yashodhara super specialist hospital, Solapur, 413005",
+  phone: "+91 99214 74791",
+  email: "shrikrishnadevasthan@gmail.com",
+  mapLink: "https://maps.app.goo.gl/XVmejsgdVSshYPTK7?g_st=aw",
   mapEmbed:
-    "https://www.google.com/maps?q=Solapur%20Maharashtra&z=14&output=embed"
+    "https://www.google.com/maps?q=D-Group%2C%20Sagar%20Chowk%2C%20Hydrabad%20Road%2C%20New%20Rangraj%20Nagar%2C%20Solapur%20413005&z=16&output=embed",
+  contacts: [
+    { name: "Bhaskar Balla", phone: "+91 94224 63353" },
+    { name: "Shriniwas Annam", phone: "+91 99214 74791" },
+    { name: "Rajesh Chippa", phone: "+91 86259 76829" },
+    { name: "Chinmay Mittha", phone: "+91 81800 82343" }
+  ]
+};
+
+export const donationPayment = {
+  name: "Shree Krishna Devasthana",
+  phone: "+91 99214 74791",
+  upiId: "337074680722296@cnrb",
+  qrImage:
+    "https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=upi%3A%2F%2Fpay%3Fpa%3D337074680722296%40cnrb%26pn%3DShree%2520Krishna%2520Devasthana%26cu%3DINR"
 };

@@ -15,15 +15,12 @@ function Footer() {
         <div>
           <p className="text-sm uppercase tracking-[0.24em] text-gold">Visit</p>
           <p className="mt-4 text-white/72">{contactInfo.address}</p>
-          <p className="mt-3 text-white/72">{contactInfo.phone}</p>
+          <p className="mt-3 text-white/72">Shriniwas Annam: {contactInfo.phone}</p>
           <p className="mt-3 text-white/72">{contactInfo.email}</p>
         </div>
         <div>
           <p className="text-sm uppercase tracking-[0.24em] text-gold">Quick Links</p>
           <div className="mt-4 flex flex-col gap-3">
-            <Link to="/events" className="text-white/72 transition hover:text-gold">
-              Upcoming Events
-            </Link>
             <Link to="/activities" className="text-white/72 transition hover:text-gold">
               Temple Activities
             </Link>

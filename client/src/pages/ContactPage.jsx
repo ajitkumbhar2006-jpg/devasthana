@@ -40,7 +40,7 @@ function ContactPage() {
       />
       <PageHero
         title="Contact the Temple"
-        description="Reach out for darshan inquiries, seva participation, event information, and temple visits."
+        description="Reach out for darshan inquiries, seva participation, donations, and temple visits."
         image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80"
       />
       <section className="section-shell py-20">
@@ -49,17 +49,30 @@ function ContactPage() {
             <div className="card-surface p-8">
               <h2 className="font-heading text-3xl text-ink">Temple Address</h2>
               <p className="soft-copy mt-4">{contactInfo.address}</p>
-              <p className="soft-copy mt-3">{contactInfo.phone}</p>
+              <p className="soft-copy mt-3">Shriniwas Annam: {contactInfo.phone}</p>
               <p className="soft-copy mt-3">{contactInfo.email}</p>
+              <a
+                href={contactInfo.mapLink}
+                target="_blank"
+                rel="noreferrer"
+                className="glass-pill mt-5 inline-flex px-5 py-3 text-sm font-semibold transition hover:border-gold hover:text-gold"
+              >
+                Open in Google Maps
+              </a>
             </div>
-            <div className="overflow-hidden rounded-[2rem] border border-white/10 shadow-aura">
-              <iframe
-                title="Temple location map"
-                src={contactInfo.mapEmbed}
-                className="h-[22rem] w-full border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+            <div className="card-surface p-8">
+              <h2 className="font-heading text-3xl text-ink">Contact Info</h2>
+              <div className="mt-5 space-y-4">
+                {contactInfo.contacts.map((contact) => (
+                  <div
+                    key={contact.phone}
+                    className="rounded-2xl border border-white/8 bg-white/[0.05] px-5 py-4"
+                  >
+                    <p className="font-semibold text-ink">{contact.name}</p>
+                    <p className="mt-1 text-sm text-white/72">{contact.phone}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 

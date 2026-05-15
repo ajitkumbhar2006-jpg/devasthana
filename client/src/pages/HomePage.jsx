@@ -1,22 +1,15 @@
 import { Link } from "react-router-dom";
-import EventCard from "../components/common/EventCard";
 import SectionTitle from "../components/common/SectionTitle";
 import Seo from "../components/common/Seo";
 import HeroSection from "../components/home/HeroSection";
 import { featuredGallery, introStats, timingData } from "../data/siteContent";
-import eventsSeed from "../data/events.json";
-import { useFetch } from "../hooks/useFetch";
-import { fetchApi } from "../lib/api";
-import LoadingSpinner from "../components/common/LoadingSpinner";
 
 function HomePage() {
-  const { data: events, loading } = useFetch(() => fetchApi("/events"), eventsSeed);
-
   return (
     <>
       <Seo
         title="Shree Krishna Devasthana | Home"
-        description="Visit Shree Krishna Devasthana for darshan, aarti, events, annadan, and devotional community life."
+        description="Visit Shree Krishna Devasthana for darshan, aarti, annadan, and devotional community life."
       />
       <HeroSection />
 
@@ -39,26 +32,6 @@ function HomePage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="section-wash py-20">
-        <div className="section-shell">
-          <SectionTitle
-            eyebrow="Upcoming Gatherings"
-            title="Celebrate festivals, seva drives, and soulful temple events."
-            description="Temple life flourishes through shared celebration. Join us for spiritual gatherings, family festivals, and devotional programs through the year."
-            center
-          />
-          {loading ? (
-            <LoadingSpinner />
-          ) : (
-            <div className="mt-12 grid gap-8 lg:grid-cols-3">
-              {events.slice(0, 3).map((event) => (
-                <EventCard key={event.slug} event={event} />
-              ))}
-            </div>
-          )}
         </div>
       </section>
 
